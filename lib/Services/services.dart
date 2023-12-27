@@ -7,7 +7,7 @@ import 'package:riverpod_http_test/model/user_model.dart';
 
 class ApiServices {
   String getApiendpoint = "https://jsonplaceholder.typicode.com/users";
-  String postApiendpoint = "";
+  String postApiendpoint = "https://jsonplaceholder.typicode.com/posts";
   getUser() async {
     Response response = await get(Uri.parse(getApiendpoint));
     if (response.statusCode == 200) {
@@ -20,8 +20,8 @@ class ApiServices {
 
   PostPosts() async {
     var data = {
-      "userId": 1,
-      "id": 1,
+      "userId": "1",
+      "id": "1",
       "title":
           "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "body":

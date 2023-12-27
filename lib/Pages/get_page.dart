@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_http_test/DataProvider/data_provider.dart';
@@ -32,7 +34,10 @@ class GetPage extends ConsumerWidget {
               ],
             );
           },
-          error: (er, s) => Text(er.toString()),
+          error: (er, s) {
+            log(er.toString());
+            return Text(er.toString());
+          },
           loading: () => const Center(
                 child: CircularProgressIndicator(),
               )),
